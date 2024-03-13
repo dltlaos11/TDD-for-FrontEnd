@@ -18,6 +18,8 @@ export default function SignupPage() {
       navigate("/login");
     }
   }, [isSuccess]);
+  console.log("password: ", password);
+  console.log("Wrongpassword: ", confirmPassword);
 
   return (
     <Wrapper>
@@ -142,15 +144,15 @@ const Input = styled.input`
   }
 `;
 
-const SignupButton = styled.button`
-  width: 100%;
-  padding: 16px;
-  border-radius: 4px;
-  background-color: ${(props) =>
-    props.disabled ? "var(--mono-100)" : "var(--primary)"};
-  color: ${(props) => (props.disabled ? "var(--mono-200)" : "var(--white)")};
-  margin-bottom: 24px;
-`;
+// const SignupButton = styled.button`
+//   width: 100%;
+//   padding: 16px;
+//   border-radius: 4px;
+//   background-color: ${(props) =>
+//     props.disabled ? "var(--mono-100)" : "var(--primary)"};
+//   color: ${(props) => (props.disabled ? "var(--mono-200)" : "var(--white)")};
+//   margin-bottom: 24px;
+// `;
 
 const ErrorMessage = styled.h6`
   font-size: 12px;
