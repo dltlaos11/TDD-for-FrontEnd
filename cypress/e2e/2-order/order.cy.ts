@@ -155,7 +155,11 @@ describe("주문을 테스트 한다.", () => {
       cy.get('[data-cy="completeBtn"]').should("be.visible").as("completeBtn");
       cy.get("@completeBtn").click();
 
-      cy.url().should("include", "/");
+      cy.url().should((url) => {
+        const currentUrl = new URL(url);
+
+        expect(currentUrl.pathname).toEqual("/");
+      });
     });
   });
 });
