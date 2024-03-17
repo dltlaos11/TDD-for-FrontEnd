@@ -8,6 +8,8 @@
     "baseUrl": "src",
     "allowSyntheticDefaultImports": true,
     "allowImportingTsExtensions": true,
+    "types": ["cypress"],
+    // types 속성은 프로젝트에서 사용할 수 있는 타입 선언 파일을 지정
 
     "esModuleInterop": true,
     /* Bundler mode */
@@ -24,6 +26,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "cypress/e2e/2-order/order.cy.ts", "**/*.ts"],
+  // include 속성은 컴파일러가 포함해야 하는 파일을 지정
+  // 여기서 `order-cy.ts`를 명시적으로 넣어줬지만 `**/*.ts`만 추가해도 됨
   "references": [{ "path": "./tsconfig.node.json" }]
 }
