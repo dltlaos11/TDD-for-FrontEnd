@@ -82,9 +82,10 @@ export default function SignupPage() {
         data-cy="signupButton"
         primary={true}
         label="회원가입"
-        disabled={!email || !password || password != confirmPassword}
+        disabled={!email || !password || password !== confirmPassword}
         onClick={() => handleSignup({ username: email, password })}
       />
+      {/* 스토리북 공용 버튼 컴포넌트 사용 */}
     </Wrapper>
   );
 }
@@ -105,6 +106,8 @@ const Wrapper = styled.div`
     margin-bottom: 24px;
   }
 `;
+// margin-bottom: 24px; 이런 조건은 Selector를 사용해서 부여
+// 버튼 위치가 Wrapper 안의 유일한 버튼
 
 const Header = styled.header`
   display: flex;
@@ -153,6 +156,7 @@ const Input = styled.input`
 //   color: ${(props) => (props.disabled ? "var(--mono-200)" : "var(--white)")};
 //   margin-bottom: 24px;
 // `;
+// App.css
 
 const ErrorMessage = styled.h6`
   font-size: 12px;

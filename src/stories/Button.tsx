@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 import "./button.css";
 import "../App.css";
 
@@ -34,9 +34,9 @@ interface ButtonProps {
  */
 export const Button = ({
   primary = false,
-  disabled = true,
   size = "medium",
   backgroundColor,
+  disabled = true,
   label,
   ...props
 }: ButtonProps) => {
@@ -50,8 +50,8 @@ export const Button = ({
         " "
       )}
       style={{ backgroundColor }}
-      disabled={disabled}
       {...props}
+      disabled={disabled}
     >
       {label}
     </button>

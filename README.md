@@ -47,8 +47,11 @@
   - 모듈 정의 애매
   - 함수 테스트의 필요성 부재
 - e2e 테스트
-- 설치: `npm install --save-dev cypress`
-- `"cypress": "npx cypress open"`, 스크립트 추가
+- `install`
+  ```plain
+  npm install --save-dev cypress
+  ```
+- `"cypress": "npx cypress open"`, 스크립트 추가(수동)
 - `configuration` 설정
   - 포트 번호 수정
 - 화면과 함께 테스트가 진행되서 사용자가 어떤 식으로 사용할지 예측 가능
@@ -56,3 +59,27 @@
 - 컨벤션에 맞게, `jest`와 같이 사용은 ❌, `Assertion` 문제로 호환 안됨
   - `cypress` 설치하면(전제)
   - `"types": ["jest"]`와 공식문서에서 `exclude` 추가하면 가능하긴함
+- 테스트 코드는 이벤트를 중심으로 사용자가 사용하는 기능을 테스트 해야
+
+### 스토리북
+
+- UI 테스트
+- 버튼의 다양한 상태(`Primary`, `Secondary`, disabled, enabled, safari, chrome, viewport, ...)
+- 디자인시스템(ui 통일감) 구축 및 유지
+- `yarn` 사용시, `yarn berry` 전환 필요(err문제)
+- `install`
+  ```plain
+  npx storybook@latest init
+  ```
+  - `"storybook": "storybook dev -p 6006"` 추가(자동)
+- `<Button/>`, `<Button/>`을 활용한 `<Header/>`,`<Header/>`를 활용한 `<Page/>`
+  - `Atomic Desgin Pattern`과 유사
+  - `atom`, `molecule`, `organism`
+- 배포
+  - `"build-storybook": "storybook build"`
+  - `npx http-server ./storybook-static`
+  - `build`폴더의 위치만 변경
+  - aws s3 버킷에 정적 파일 업로드
+- 웹 접근성 테스트(`addon`추가)
+  - `npm install --save-dev @storybook/addon-a11y`
+  - `main.ts` `addon`추가
