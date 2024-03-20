@@ -83,3 +83,9 @@
 - 웹 접근성 테스트(`addon`추가)
   - `npm install --save-dev @storybook/addon-a11y`
   - `main.ts` `addon`추가
+
+### 테스트 자동화
+
+- `cypress cloud`, `cypress`에서 무료로 제공하는 클라우드
+  - `Specs` 선언한 테스트 종류
+  - `github Action`처럼 이벤트 이후 테스트가 자동으로 실행
