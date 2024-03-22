@@ -1,3 +1,4 @@
+import { expect } from "chai";
 describe("주문을 테스트 한다.", () => {
   it("사용자는 배달/포장 중 원하는 유형을 선택할 수 있다.", () => {
     cy.visit("/");
@@ -155,10 +156,13 @@ describe("주문을 테스트 한다.", () => {
       cy.get('[data-cy="completeBtn"]').should("be.visible").as("completeBtn");
       cy.get("@completeBtn").click();
 
+      // cy.url().should((url) => {
+      //   const currentUrl = new URL(url);
+      //   expect(currentUrl.pathname).to.equal("/");
+      // });
       cy.url().should((url) => {
         const currentUrl = new URL(url);
-
-        expect(currentUrl.pathname).toEqual("/");
+        expect(currentUrl.pathname).to.equal("/");
       });
     });
   });
