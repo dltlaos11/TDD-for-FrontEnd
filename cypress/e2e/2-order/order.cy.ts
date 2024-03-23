@@ -156,13 +156,8 @@ describe("주문을 테스트 한다.", () => {
       cy.get('[data-cy="completeBtn"]').should("be.visible").as("completeBtn");
       cy.get("@completeBtn").click();
 
-      // cy.url().should((url) => {
-      //   const currentUrl = new URL(url);
-      //   expect(currentUrl.pathname).to.equal("/");
-      // });
-      cy.url().should((url) => {
-        const currentUrl = new URL(url);
-        expect(currentUrl.pathname).to.equal("/");
+      cy.location("pathname").then((pathname) => {
+        expect(pathname).to.eq("/"); // pathname 확인
       });
     });
   });

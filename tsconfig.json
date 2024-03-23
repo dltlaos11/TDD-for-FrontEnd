@@ -8,7 +8,7 @@
     "baseUrl": "src",
     "allowSyntheticDefaultImports": true,
     "allowImportingTsExtensions": true,
-    "types": ["cypress"],
+    "types": ["cypress", "chai"],
     // types 속성은 프로젝트에서 사용할 수 있는 타입 선언 파일을 지정
 
     "esModuleInterop": true,
@@ -26,8 +26,13 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "cypress/e2e/2-order/order.cy.ts", "**/*.ts"],
+  "include": ["src", "**/*.ts"],
   // include 속성은 컴파일러가 포함해야 하는 파일을 지정
   // 여기서 `order-cy.ts`를 명시적으로 넣어줬지만 `**/*.ts`만 추가해도 됨
+
+  // "**/*.ts": 모든 서브 디렉토리에 있는 TypeScript 파일을 포함
+  // "chai" 라이브러리의 타입 선언 파일이 포함되지 않은 경우,
+  // 해당 라이브러리의 함수나 객체를 TypeScript에서 사용할 때 인식 문제가 발생할 수 있다.
+  //  따라서 필요한 타입 선언 파일이 포함되도록 설정
   "references": [{ "path": "./tsconfig.node.json" }]
 }
