@@ -89,3 +89,15 @@
 - `cypress cloud`, `cypress`에서 무료로 제공하는 클라우드
   - `Specs` 선언한 테스트 종류
   - `github Action`처럼 이벤트 이후 테스트가 자동으로 실행
+
+### Amplify
+
+- `baseDirectory`
+- `environment variables settings`
+- 프로비저닝(`Docker set`)-빌드-배포
+- 도메인 관리
+  - Route53 구입했다면 바로 처리
+  - GoDaddy, Gabia -> CNAME connect
+- `start-server-and-test` package -> Edit scripts
+- `amplify.yml` 수정
+- `{"backendDuration": 0}` -> determine expense
